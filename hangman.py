@@ -120,10 +120,11 @@ def hangman(secretWord):
         print("You have " + str(8 - mistakesMade) + " guesses left.")
         print("Available letters: " + availableLetters)
         guess = input('Please guess a letter: ')
+        guess = guess.lower().strip()
 
         if len(guess) > 1:
             print('Please only guess one letter')
-        if guess not in string.ascii_lowercase:
+        elif guess not in string.ascii_lowercase:
             print('Please only guess letters')
         else:
             lettersGuessed.append(guess)
